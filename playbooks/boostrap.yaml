@@ -1,0 +1,9 @@
+---
+ - hosts: all
+   tasks:
+   - name: Add remote user to sudoers
+     lineinfile:
+       "dest=/etc/sudoers
+       regexp='^remote ALL'
+       line='remote ALL=(ALL) NOPASSWD: ALL'
+       state=present"
